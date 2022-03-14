@@ -1,7 +1,6 @@
 ---
 - hosts: webservers
   become: True
-  host_key_checking: False
   tasks:
     - name: Install packages
       yum:
