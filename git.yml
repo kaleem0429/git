@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: True
+  gather_fact: false
+  tasks:
+    - name: Install packages
+      yum:
+        name: "git"
+        state: "present"
+...
