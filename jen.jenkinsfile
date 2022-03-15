@@ -1,10 +1,10 @@
-pipeline{
+ntpipeline{
     agent any
 	stages{
 		stage(Execute){
 			steps {
 				script {
-		ANSIBLE_PRIVATE_KEY="1234"
+		ANSIBLE_PRIVATE_KEY="credentials(private-key1)"
 	}
 				// sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
 				echo "${ANSIBLE_PRIVATE_KEY}"
