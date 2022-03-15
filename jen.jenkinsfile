@@ -1,4 +1,4 @@
-ntpipeline{
+pipeline{
     agent any
     environment {
         AWS_ACCESS_KEY_ID     = credentials('private-key1')
@@ -10,8 +10,8 @@ ntpipeline{
 				script {
 		// ANSIBLE_PRIVATE_KEY="credentials(private-key1)"
 	}
-				// sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
-				echo "${AWS_ACCESS_KEY_ID}"
+				   sh 'ansible-playbook -i host.inv --private-key=$AWS_ACCESS_KEY_ID git.yml'
+				// echo "${AWS_ACCESS_KEY_ID}"
 			}
 		}
 	}
