@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage(Execute){
 			steps {
-				sh 'ansible-playbook -i host.inv --private-key1=$ANSIBLE_PRIVATE_KEY git.yml'
+				sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
 			}
 		}
 	}
