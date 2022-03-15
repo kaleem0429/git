@@ -1,12 +1,13 @@
 pipeline{
     agent any
-	environment {
+	script {
 		ANSIBLE_PRIVATE_KEY=credentials('private-key1')
 	}
 	stages{
 		stage(Execute){
 			steps {
-				sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
+				// sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
+				echo '--private-key=$ANSIBLE_PRIVATE_KEY'
 			}
 		}
 	}
