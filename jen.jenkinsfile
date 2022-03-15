@@ -1,13 +1,17 @@
 ntpipeline{
     agent any
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('private-key1')
+        // AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+    }
 	stages{
 		stage(Execute){
 			steps {
 				script {
-		ANSIBLE_PRIVATE_KEY="credentials(private-key1)"
+		// ANSIBLE_PRIVATE_KEY="credentials(private-key1)"
 	}
 				// sh 'ansible-playbook -i host.inv --private-key=$ANSIBLE_PRIVATE_KEY git.yml'
-				echo "${ANSIBLE_PRIVATE_KEY}"
+				echo "${AWS_ACCESS_KEY_ID}"
 			}
 		}
 	}
