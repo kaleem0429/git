@@ -7,9 +7,6 @@ pipeline{
 	stages{
 		stage(Execute){
 			steps {
-				script {
-		// ANSIBLE_PRIVATE_KEY="credentials(private-key1)"
-	}
 				   sh 'ansible-playbook -i host.inv --private-key=$AWS_ACCESS_KEY_ID git.yml'
 				// echo "${AWS_ACCESS_KEY_ID}"
 			}
